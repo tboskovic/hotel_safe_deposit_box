@@ -5,7 +5,7 @@ export const checkSecretMasterCode = (code) => {
         fetch(`https://9w4qucosgf.execute-api.eu-central-1.amazonaws.com/default/CR-JS_team_M02a?code=${code}`)
             .then(res => res.json())
             .then((result) => {
-                if(result.sn === '4815162342') {
+                if(result.sn) {
                     return dispatch({
                         type: CODE_CORRECT
                     })
